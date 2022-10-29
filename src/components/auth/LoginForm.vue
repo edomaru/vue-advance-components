@@ -1,6 +1,6 @@
 <template>
     <h1>Login</h1>
-    <form>
+    <form @submit.prevent="$emit('submit', email, password)">
         <div class="mb-3">
             <input type="email" v-model="email" class="form-control" placeholder="Email">
         </div>
@@ -18,6 +18,16 @@ export default {
     data: () => ({
         email: '',
         password: ''
-    })
+    }),
+    emits: {
+        submit: (email, password) => {
+            if (email && password) {
+                return true;
+            } else {
+                console.warn("Invalid submit event payload.");
+                return false;
+            }
+        }
+    }
 }
 </script>
