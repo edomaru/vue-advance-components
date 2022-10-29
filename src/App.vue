@@ -11,7 +11,7 @@ export default {
 },
   data: () => ({
     items: 3,
-    show: false,
+    show: true,
     alert: {
       message: "Message",
       types: ["success", "warning", "danger"],
@@ -24,6 +24,6 @@ export default {
   <div class="container py-5">
     <!-- <Person :age="25" first-name="John" last-name="Doe" /> -->
     <!-- <Alerts v-bind="alert" /> -->
-    <Alert message="Alert message" type="danger" :show="true" />
+    <Alert message="Alert message" type="danger" :show="show" @alert-close="show = false" />
   </div>
 </template>
