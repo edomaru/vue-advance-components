@@ -8,7 +8,7 @@ export default {
     Person,
     Alerts,
     Alert
-  },
+},
   data: () => ({
     items: 3,
     show: false,
