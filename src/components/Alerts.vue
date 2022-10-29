@@ -6,7 +6,11 @@
 import Alert from './Alert.vue';
 
 export default {
-    props: ['message', 'type', 'types'],
+    // props: ['message', 'types'],
+    props: {
+        message: String,
+        types: Array
+    },
     components: {
         Alert
     }

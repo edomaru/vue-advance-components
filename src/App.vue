@@ -22,8 +22,8 @@ export default {
 
 <template>
   <div class="container py-5">
-    <!-- <Person age="25" first-name="John" last-name="Doe" /> -->
-    <!-- <Alert :message="items + ' items has been removed'" type="success" :show="true" /> -->
-    <Alerts v-bind="alert" />
+    <!-- <Person :age="25" first-name="John" last-name="Doe" /> -->
+    <!-- <Alerts v-bind="alert" /> -->
+    <Alert message="Alert message" type="danger" :show="true" />
   </div>
 </template>
