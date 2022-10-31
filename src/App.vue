@@ -36,8 +36,8 @@ export default {
     <!-- <Alerts v-bind="alert" /> -->
     <!-- <Alert message="Alert message" type="danger" :show="show" @alert-close="show = false" /> -->
     <!-- <LoginForm @submit="handleSubmit" /> -->
-    <!-- <input type="email" class="form-control" :value="email" @input="email = $event.target.value" placeholder="Email" /> -->
-    <BaseInput v-model="email" label="Email" />
+    <!-- <input type="email" class="form-control" v-model.lazy="email" placeholder="Email" /> -->
+    <BaseInput v-model.lowercase="email" label="Email" />
     {{ email }}
   </div>
 </template>

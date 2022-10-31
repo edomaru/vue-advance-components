@@ -15,8 +15,21 @@ export default {
         modelValue: {
             type: String,
             required: true
+        },
+        modelModifiers: {
+            type: Object,
+            default: () => ({})
         }
     },
+    // methods: {
+    //     handleInput (event) {
+    //         let value = event.target.value;
+    //         if (this.modelModifiers.lowercase) {
+    //             value = value.toLowerCase();
+    //         }
+    //         this.$emit('update:modelValue', value);
+    //     }
+    // },
     emits: ['update:modelValue'],
     computed: {
         value: {
@@ -24,6 +37,9 @@ export default {
                 return this.modelValue;
             },
             set (value) {
+                if (this.modelModifiers.lowercase) {
+                    value = value.toLowerCase();
+                }
                 this.$emit('update:modelValue', value);
             }
         }
