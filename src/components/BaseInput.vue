@@ -21,15 +21,6 @@ export default {
             default: () => ({})
         }
     },
-    // methods: {
-    //     handleInput (event) {
-    //         let value = event.target.value;
-    //         if (this.modelModifiers.lowercase) {
-    //             value = value.toLowerCase();
-    //         }
-    //         this.$emit('update:modelValue', value);
-    //     }
-    // },
     emits: ['update:modelValue'],
     computed: {
         value: {
