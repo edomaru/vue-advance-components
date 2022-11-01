@@ -40,8 +40,8 @@ export default {
     <!-- <input type="email" class="form-control" v-model.lazy="email" placeholder="Email" /> -->
     <!-- <LoginForm @submit="handleSubmit" v-model:email.lowercase="email" v-model:password="password" />
       {{ email }} - {{ password }} -->
-    <Alert message="Alert message" type="danger" :show="show" @alert-close="show = false" />
-    <BaseInput v-model.lowercase="email" label="Email" id="email-address" class="mt-3" />
-    <BaseButton text="Submit" theme="primary" @click="show = true" class="mt-3" id="btn-submit" />
+    <!-- <Alert message="Alert message" type="danger" :show="show" @alert-close="show = false" /> -->
+    <!-- <BaseButton text="Submit" theme="primary" @click="show = true" class="mt-3" id="btn-submit" /> -->
+    <BaseInput v-model.lowercase="email" label="Email" type="email" />
   </div>
 </template>

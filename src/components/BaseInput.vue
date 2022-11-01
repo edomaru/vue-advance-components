@@ -1,12 +1,13 @@
 <template>
-    <div class="mb-3">
+
         <label class="form-label">{{ label }}</label>
-        <input type="text" class="form-control" v-model="value">
-    </div>
+        <input v-bind="$attrs" class="form-control" v-model="value">
+
 </template>
 
 <script>
 export default {
+    // inheritAttrs: false,
     props: {
         label: {
             type: String,
