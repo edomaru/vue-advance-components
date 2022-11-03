@@ -1,6 +1,6 @@
 <template>
     <div :class="['alert', 'alert-' + type, 'alert-dismissible']" v-show="show">
-        {{ message }}
+        <slot>Default message</slot>
         <button type="button" class="btn-close" @click="close"></button>
     </div>
 </template>
@@ -9,10 +9,6 @@
 export default {
     // props: ['message', 'type', 'show']
     props: {
-        message: {
-            type: String,
-            required: true
-        },
         type: {
             type: String,
             default: 'primary',
