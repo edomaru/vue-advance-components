@@ -42,14 +42,15 @@ export default {
 
 <template>
   <div class="container py-5">
-    <!-- <Alert type="danger" :show="show" @alert-close="show = false">
-    </Alert> -->
-    <Modal :show="true">
+    <!-- <Modal :show="true">
       <template #header>The Modal title</template>
       <p>The Modal body</p>
       <template #footer>
         <button class="btn btn-primary">Save</button>
       </template>
-    </Modal>
+    </Modal> -->
+    <Alert type="success" :show="show" @alert-close="show = false" v-slot="{ alertLink }">
+      The alert message <a href="#" :class="alertLink">Alert link</a>
+    </Alert>
   </div>
 </template>
