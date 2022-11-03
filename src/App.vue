@@ -7,6 +7,7 @@ import BaseInput from "./components/BaseInput.vue"
 import BaseButton from "./components/BaseButton.vue"
 import IconCheck from "./components/icons/IconCheck.vue"
 import IconExclamation from "./components/icons/IconExclamation.vue"
+import Modal from "./components/Modal.vue"
 
 export default {
   components: {
@@ -16,6 +17,7 @@ export default {
     LoginForm,
     BaseInput,
     BaseButton,
+    Modal,
     IconCheck,
     IconExclamation
 },
@@ -40,7 +42,14 @@ export default {
 
 <template>
   <div class="container py-5">
-    <Alert type="danger" :show="show" @alert-close="show = false">
-    </Alert>
+    <!-- <Alert type="danger" :show="show" @alert-close="show = false">
+    </Alert> -->
+    <Modal :show="true">
+      <template #header>The Modal title</template>
+      <p>The Modal body</p>
+      <template #footer>
+        <button class="btn btn-primary">Save</button>
+      </template>
+    </Modal>
   </div>
 </template>
