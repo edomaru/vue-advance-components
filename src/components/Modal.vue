@@ -3,15 +3,14 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
+                    <h5 class="modal-title"><slot name="header"></slot></h5>
                     <button type="button" class="btn-close" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>Modal body text goes here.</p>
+                    <slot></slot>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <slot name="footer"></slot>
                 </div>
             </div>
         </div>

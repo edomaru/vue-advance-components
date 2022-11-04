@@ -4,6 +4,9 @@
 
 <script>
 export default {
+    created () {
+        console.log(this.$attrs);
+    },
     props: {
         text: {
             type: String,
