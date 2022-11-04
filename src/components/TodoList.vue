@@ -1,10 +1,13 @@
 <template>
     <ul class="list-group">
         <li class="list-group-item" v-for="item in items" :key="item.id">
-            <p class="mb-0 pb-2">{{ item.name }}</p>
-            <button class="btn btn-sm btn-success">Done</button>
+            <slot v-bind="item"></slot>
         </li>
-        <li class="list-group-item">All: {{ all }} | Todo: {{ todo }} | Done: {{ done }}</li>
+        <li class="list-group-item">
+            <slot name="footer" :all="all" :todo="todo" :done="done">
+                All: {{ all }} | Todo: {{ todo }} | Done: {{ done }}
+            </slot>
+        </li>
     </ul>
 </template>
 

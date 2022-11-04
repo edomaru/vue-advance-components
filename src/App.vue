@@ -8,6 +8,7 @@ import BaseButton from "./components/BaseButton.vue"
 import IconCheck from "./components/icons/IconCheck.vue"
 import IconExclamation from "./components/icons/IconExclamation.vue"
 import Modal from "./components/Modal.vue"
+import TodoList from "./components/TodoList.vue"
 
 export default {
   components: {
@@ -19,7 +20,8 @@ export default {
     BaseButton,
     Modal,
     IconCheck,
-    IconExclamation
+    IconExclamation,
+    TodoList
 },
   data: () => ({
     items: 3,
@@ -42,15 +44,21 @@ export default {
 
 <template>
   <div class="container py-5">
-    <!-- <Modal :show="true">
-      <template #header>The Modal title</template>
-      <p>The Modal body</p>
-      <template #footer>
-        <button class="btn btn-primary">Save</button>
-      </template>
-    </Modal> -->
-    <Alert type="success" :show="show" @alert-close="show = false" v-slot="{ alertLink }">
+    <!-- <Alert type="success" :show="show" @alert-close="show = false" v-slot="{ alertLink }">
       The alert message <a href="#" :class="alertLink">Alert link</a>
-    </Alert>
+    </Alert> -->
+    <TodoList>
+      <template #default="{ name }">
+        <input type="checkbox" class="form-check-input me-1">
+        <label class="form-check-label">{{ name }}</label>
+      </template>
+      <template #footer="{ all, todo, done }">
+        <div class="d-flex justify-content-between align-items-center">
+          <span class="text-muted">All ({{ all }})</span>
+          <span class="text-muted">Todo ({{ todo }})</span>
+          <span class="text-muted">Done ({{ done }})</span>
+        </div>
+      </template>
+    </TodoList>
   </div>
 </template>
